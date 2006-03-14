@@ -1,0 +1,8 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1496
+
+syntax hiliting of *.i and *.ii files of initng init scripts. Inherits from sh.vim and adds
+in the hiliting to start/stop {} blocks. Requires Vim 6.3 or later.
+
+http://www.initng.org/
+
+this script is also available at http://glen.alkohol.ee/pld/initng/vim/
