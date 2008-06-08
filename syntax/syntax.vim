@@ -1,10 +1,10 @@
 " Vim syntax file
-" Language:	initng .i files
-" Maintainer:	Elan Ruusam‰e <glen@pld-linux.org>
-" URL:		http://glen.alkohol.ee/pld/initng/
-" License:	GPL v2
-" Version:	0.12
-" Last Change:	$Date: 2006/03/14 23:08:02 $
+" Language:		initng .i files
+" Maintainer:	Elan Ruusam√§e <glen@pld-linux.org>
+" URL:			http://glen.alkohol.ee/pld/initng/
+" License:		GPL v2
+" Version:		0.14
+" Last Change:	$Date: 2008/06/08 10:26:19 $
 "
 " Syntax highlighting for initng .i files. Inherits from sh.vim and adds
 " in the hiliting to start/stop {} blocks. Requires vim 6.3 or later.
@@ -39,17 +39,18 @@ syn match	initngServiceOption		/.\+\s*=.\+;/ contains=initngServiceKeywords,init
 syn match	initngServiceOption		/\w\+;/ contains=initngServiceKeywords,initngSubstMacro contained
 
 " options with value
-syn keyword	initngServiceKeywords	also_stop need use nice setuid contained
-syn keyword	initngServiceKeywords	delay chdir suid sgid start_pause env_file env_parse pid_file pidfile pid_of up_when_pid_set stdout stderr syncron just_before contained
-syn keyword	initngServiceKeywords	provide contained
-syn match	initngServiceKeywords	/\(script\|exec\(_args\)\?\) \(start\|stop\|daemon\)/ contained
+syn keyword	initngServiceKeywords	also_stop need use conflict nice setuid contained
+syn keyword	initngServiceKeywords	delay chdir suid sgid start_pause env_file env_parse pid_file pidfile contained
+syn keyword	initngServiceKeywords	stdall pid_of up_when_pid_set stdout stderr syncron just_before contained
+syn keyword	initngServiceKeywords	provide lockfile daemon_stops_badly contained
+syn match	initngServiceKeywords	/\(script\|exec\(_args\)\?\) \(start\|stop\|daemon\|kill\)/ contained
 syn match	initngServiceKeywords	/env\s\+\w\+/ contained
 
 " rlimits
 syn keyword	initngServiceKeywords	rlimit_cpu_hard rlimit_core_soft contained
 
 " single options
-syn keyword	initngServiceKeywords	last respawn network_provider require_network require_file critical contained
+syn keyword	initngServiceKeywords	last respawn network_provider require_network require_file critical forks contained
 " cron options
 syn keyword	initngServiceKeywords	hourly contained
 syn match	initngVariable			/\${\?\w\+\}\?/
